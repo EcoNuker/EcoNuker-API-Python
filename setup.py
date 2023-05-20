@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='econuker-api',
+    name='econuker',
     version='1.0.0',
     author='YumYummity',
     author_email='034nop@gmail.com',
