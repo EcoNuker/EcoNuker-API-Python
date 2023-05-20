@@ -7,7 +7,7 @@ setup(
     author_email='034nop@gmail.com',
     description='API wrapper for https://api.econuker.xyz',
     long_description='A Python library for interacting with EcoNuker\'s API.',
-    url='https://github.com/EcoNuker/econuker-api-python',
+    url='https://github.com/EcoNuker/EcoNuker-API-Python/',
     packages=find_packages(),
     classifiers=[
         'Development Status :: 5 - Production/Stable',

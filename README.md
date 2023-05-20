@@ -6,7 +6,7 @@ EcoNuker-API is a Python library for interacting with the EcoNuker API, which pr
 
 You can install the EcoNuker-API library using pip:
 
-`pip install econuker-api`
+`pip install econuker`
 
 ## Usage
 
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 ```
 
 ### Async Example
-```python
+```
 # Python Async Example
 from econuker import AsyncClient
 beta = True # False
@@ -45,10 +45,10 @@ if __name__ == "__main__":
 ```
 
 
-# Documentation
+Documentation
 For detailed documentation on the EcoNuker API, read https://docs.econuker.xyz/
 
 For detailed documentation on how to use the EcoNuker-API library, please wait while we write it lol.
 
-# License
+License
 This project is licensed under the MIT License. See the LICENSE file for details.
