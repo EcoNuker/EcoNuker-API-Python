@@ -29,7 +29,7 @@ if __name__ == "__main__":
 ```
 
 ### Async Example
-```
+```python
 # Python Async Example
 from econuker import AsyncClient
 beta = True # False
