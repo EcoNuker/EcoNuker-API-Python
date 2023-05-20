@@ -2,7 +2,7 @@ import requests
 from econuker.Exceptions import Forbidden, Unauthorized, NotFound, InternalServerError, RateLimited, EconukerException, InvalidAuthToken
 
 
-def _handle_error(self, response):
+def _handle_error(response):
     """
     Handles the error responses from API requests.
 
@@ -228,7 +228,7 @@ class Client:
             self._raw: dict = data
             self.id: str = data["id"]
             self.name: str = data["name"]
-            self.owner: Owner = Owner(data["owner"])
+            self.owner: self.Owner = self.Owner(data["owner"])
             self.url: str = data["vanity_url"]
             self.verified: bool = data["verified"]
             self.created_at: int = data["created_at"]
@@ -328,7 +328,7 @@ class Client:
             self.desc: str = self._data[2]
             self.aliases: list = self._data[3]
             self._extradata: str = self._data[4]
-            self.price: ItemPrice = self.ItemPrice(self._data[5])
+            self.price: self.ItemPrice = self.ItemPrice(self._data[5])
             self.price.worth: str = self._data[6]
 
     def fetch_items(self, hidden:bool=True) -> ItemsResult:

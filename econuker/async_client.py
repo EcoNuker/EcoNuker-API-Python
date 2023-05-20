@@ -2,7 +2,7 @@ import aiohttp, asyncio, requests
 from econuker.Exceptions import Forbidden, Unauthorized, NotFound, InternalServerError, RateLimited, EconukerException, InvalidAuthToken
 
 
-async def _handle_error(self, response):
+async def _handle_error(response):
     """
     Handles the error responses from API requests.
 
@@ -330,7 +330,7 @@ class AsyncClient:
             self.desc: str = self._data[2]
             self.aliases: list = self._data[3]
             self._extradata: str = self._data[4]
-            self.price: ItemPrice = self.ItemPrice(self._data[5])
+            self.price: self.ItemPrice = self.ItemPrice(self._data[5])
             self.price.worth: str = self._data[6]
 
     async def fetch_items(self, hidden: bool = True) -> ItemsResult:

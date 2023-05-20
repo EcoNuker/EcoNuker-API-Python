@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='econuker',
-    version='1.0.0',
+    version='1.0.1',
     author='YumYummity',
     author_email='034nop@gmail.com',
     description='API wrapper for https://api.econuker.xyz',
@@ -21,7 +21,7 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Internet :: WWW/HTTP',
     ],
-    python_requires='>=3.8',
+    python_requires='>=3.9',
     install_requires=[
         'requests',
         'aiohttp'
