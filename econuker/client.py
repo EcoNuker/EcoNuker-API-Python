@@ -108,7 +108,7 @@ class Client:
         if not beta:
             raise EconukerException("Main API is not available at this moment.")
 
-        def __check_verify(self, auth_token) -> Token:
+        def __check_verify(self) -> Token:
             """
             Verifies an authentication token.
 
@@ -118,6 +118,7 @@ class Client:
             Returns:
                 Token: A Token object if the token is valid, False otherwise.
             """
+            auth_token = self.auth_token
             url = self.base_url + f"/auth/verify/{auth_token}"
             response = requests.get(url)
             if response.status_code == 200:
@@ -130,8 +131,10 @@ class Client:
             else:
                 _handle_error(response)
     
+        self.__check_verify = lambda: __check_verify(self)
+
         if self.auth_token is not None:
-            token = self.__check_verify(self.auth_token)
+            token = self.__check_verify()
             if token is False:
                 raise InvalidAuthToken("Invalid auth_token provided.")
             else:

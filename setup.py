@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='econuker',
-    version='1.0.2',
+    version='1.0.5',
     author='YumYummity',
     author_email='034nop@gmail.com',
     description='API wrapper for https://api.econuker.xyz',
