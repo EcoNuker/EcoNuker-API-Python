@@ -45,10 +45,10 @@ if __name__ == "__main__":
 ```
 
 
-Documentation
+# Documentation
 For detailed documentation on the EcoNuker API, read https://docs.econuker.xyz/
 
 For detailed documentation on how to use the EcoNuker-API library, please wait while we write it lol.
 
-License
+# License
 This project is licensed under the MIT License. See the LICENSE file for details.
