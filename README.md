@@ -1,6 +1,6 @@
-# EcoNuker-API
+# EcoNuke
 
-EcoNuker-API is a Python library for interacting with the EcoNuker API, which provides tools for managing and controlling Eco servers.
+EcoNuker is a Python library for interacting with the EcoNuker API, which provides routes for items, servers, and more!
 
 ## Installation
 
@@ -42,6 +42,14 @@ if __name__ == "__main__":
         print(status.name)
         return status
     asyncio.run(asyncfunction())
+```
+
+### Downtime Notifier Example
+```python
+# Python Downtime Notifier Example
+from econuker import AsyncClient
+beta = True # get notified about downtime of our Beta bot.
+authtoken = None
 ```
 
 
