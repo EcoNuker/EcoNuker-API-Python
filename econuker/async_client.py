@@ -32,6 +32,43 @@ async def _handle_error(response):
     else:
         raise EconukerException(f"{await response.text()}")
 
+class Owner:
+    """
+    Owner object.
+
+    Attributes:
+        _raw (str): Raw owner data.
+        name (str): Owner name.
+        id (str): Owner ID.
+        nick (str, None): Owner nickname.
+        profile (str, None): Owner profile.
+    """
+
+    def __init__(self, data):
+        self._raw: str = data
+        self.name = data["name"]
+        self.id = data["id"]
+        self.nick = data.get("nick")
+        self.profile = data.get("profile")
+
+class ItemPrice:
+    """
+    ItemPrice object.
+
+    Attributes:
+        _raw (dict): Raw item price data, excluding worth.
+        _price_parts (str): Raw item price data split.
+        sell (str): The sell amount.
+        buy (str): The buy amount.
+        worth (str): The worth amount.
+    """
+
+    def __init__(self, price):
+        self._raw: dict = price
+        self._price_parts: list = price.split("|")
+        self.sell: str = self._price_parts[0].strip()
+        self.buy: str = self._price_parts[1].strip()
+        self.worth: str = None
 
 class Token:
     """
@@ -202,25 +239,6 @@ class AsyncClient:
         """
 
         def __init__(self, data):
-            class Owner:
-                """
-                Owner object.
-
-                Attributes:
-                    _raw (str): Raw owner data.
-                    name (str): Owner name.
-                    id (str): Owner ID.
-                    nick (str, None): Owner nickname.
-                    profile (str, None): Owner profile.
-                """
-
-                def __init__(self, data):
-                    self._raw: str = data
-                    self.name = data["name"]
-                    self.id = data["id"]
-                    self.nick = data.get("nick")
-                    self.profile = data.get("profile")
-
             self._raw: dict = data
             self.id: str = data["id"]
             self.name: str = data["name"]
@@ -302,25 +320,6 @@ class AsyncClient:
         """
 
         def __init__(self, data):
-            class ItemPrice:
-                """
-                ItemPrice object.
-
-                Attributes:
-                    _raw (dict): Raw item price data, excluding worth.
-                    _price_parts (str): Raw item price data split.
-                    sell (str): The sell amount.
-                    buy (str): The buy amount.
-                    worth (str): The worth amount.
-                """
-
-                def __init__(self, price):
-                    self._raw: dict = price
-                    self._price_parts: list = price.split("|")
-                    self.sell: str = self._price_parts[0].strip()
-                    self.buy: str = self._price_parts[1].strip()
-                    self.worth: str = None
-
             self._raw: dict = data
             self._data: list = data.get(list(data.keys())[0])
             self.id: str = list(data.keys())[0]
@@ -330,7 +329,7 @@ class AsyncClient:
             self.desc: str = self._data[2]
             self.aliases: list = self._data[3]
             self._extradata: str = self._data[4]
-            self.price: self.ItemPrice = self.ItemPrice(self._data[5])
+            self.price: ItemPrice = ItemPrice(self._data[5])
             self.price.worth: str = self._data[6]
 
     async def fetch_items(self, hidden: bool = True) -> ItemsResult:
