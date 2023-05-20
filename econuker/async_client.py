@@ -98,6 +98,7 @@ class AsyncClient:
 
     Args:
         auth_token (str, optional): The authentication token. Can be None. Must be valid. Defaults to None.
+        
         beta (bool, optional): Whether or not to use the BETA API. Defaults to False.
     """
 

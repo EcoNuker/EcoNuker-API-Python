@@ -97,6 +97,7 @@ class Client:
 
     Args:
         auth_token (str, optional): The authentication token. Can be None. Must be valid. Defaults to None.
+        
         beta (bool, optional): Whether or not to use the BETA API. Defaults to False.
     """
 
@@ -291,7 +292,7 @@ class Client:
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
             data = response.json()
-            return self.serverResult(data)
+            return self.ServerResult(data)
         else:
             _handle_error(response)
 
