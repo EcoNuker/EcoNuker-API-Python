@@ -2,6 +2,8 @@
 
 EcoNuker is a Python library for interacting with the EcoNuker API, which provides routes for items, servers, and more!
 
+PyPi: https://pypi.org/project/econuker/
+
 ## Installation
 
 You can install the EcoNuker-API library using pip:
