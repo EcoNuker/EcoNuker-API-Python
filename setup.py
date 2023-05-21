@@ -1,12 +1,16 @@
 from setuptools import setup, find_packages
 
+with open('README.md', 'r', encoding='utf-8') as f:
+    long_description = f.read()
+
 setup(
     name='econuker',
-    version='1.0.6',
+    version='1.0.7',
     author='YumYummity',
     author_email='034nop@gmail.com',
     description='API wrapper for https://api.econuker.xyz',
-    long_description='A Python library for interacting with EcoNuker\'s API.',
+    long_description=long_description,
+    long_description_content_type='text/markdown',  # Specify the content type
     url='https://github.com/EcoNuker/EcoNuker-API-Python/',
     packages=find_packages(),
     classifiers=[
