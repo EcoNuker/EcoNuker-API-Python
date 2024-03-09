@@ -15,10 +15,6 @@ You can install the EcoNuker-API library using pip:
 
 ## Usage
 
-WARNING: The MAIN API is not available for use until June 1, 2023.
-
-Please use the BETA version. Beta=True.
-
 ### Example
 
 ```python
