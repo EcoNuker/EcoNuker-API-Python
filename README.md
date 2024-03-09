@@ -1,3 +1,6 @@
+# EcoNuker's API Rewrite
+EcoNuker is undergoing a major API rewrite, and as of this time, `EcoNuker.py` will not work.
+
 # EcoNuker
 
 EcoNuker is a Python library for interacting with the EcoNuker API, which provides routes for items, servers, and more!
